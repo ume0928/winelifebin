@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>利用規約｜ワインらいふ便</title>
+<meta name="description" content="ワインらいふ便のご利用条件について。">
+<meta name="robots" content="noindex,nofollow">
+<style>
+/* ワインらいふ便 サブページ共通スタイル（申込・特商法・規約・プライバシー）
+   LP（ワインらいふ便_LP.html）と同じ配色・同じ可読性ルール（DESIGN.md）。
+   build_site.py が各ページの  をこのファイルの中身に置き換える。 */
+:root{
+  --green:#1B5E3B; --green-deep:#134630;
+  --cream:#FFF6DC; --cream-soft:#FFFBF0; --paper:#FFFFFF;
+  --ink:#1F1A17; --soft:#3D3632;
+  --red:#A8231C; --wine:#9B2C3B; --wine-deep:#7A1F2C;
+  --orange:#F39A2B;
+  --rule:#E8DFC9; --straw:#FFF0C2; --focus:#FFD43D;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:-apple-system,"Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  font-size:19px;line-height:1.85;letter-spacing:.02em;
+  overflow-wrap:anywhere;word-break:auto-phrase;
+}
+img{max-width:100%}
+a{color:var(--green);text-decoration-thickness:2px;text-underline-offset:4px}
+a:hover{color:var(--green-deep);text-decoration-thickness:3px}
+a:focus-visible,.btn:focus-visible{outline:4px solid var(--ink);outline-offset:2px;box-shadow:0 0 0 8px var(--focus)}
+p{margin:0;text-wrap:pretty}
+ul,ol{margin:0;padding:0 0 0 1.4em}
+li + li{margin-top:6px}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.4}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+.nowrap{white-space:nowrap}
+
+/* ヘッダー・フッター */
+.site{background:var(--paper);border-bottom:4px solid var(--green)}
+.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:6px 14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{font-size:22px;font-weight:800;color:var(--green);letter-spacing:.04em;text-decoration:none;display:inline-flex;align-items:center;min-height:48px}
+.site-back{font-size:18px;display:inline-flex;align-items:center;min-height:48px}
+main{padding:34px 0 8px}
+h1{font-size:clamp(25px,6.6vw,31px);color:var(--green);margin-bottom:8px;text-wrap:balance}
+.lead{margin:14px 0 26px}
+h2{font-size:clamp(21px,5.4vw,24px);color:var(--green);margin:34px 0 12px;padding-bottom:6px;border-bottom:3px solid var(--rule)}
+h3{font-size:20px;margin:20px 0 6px}
+section p + p,section ul + p,section p + ul{margin-top:10px}
+.foot{background:var(--cream);border-top:4px solid var(--green);margin-top:44px;padding:26px 0 34px}
+.foot-links{display:flex;flex-wrap:wrap;gap:6px 24px;padding:0;list-style:none;margin-bottom:14px}
+.foot-links li{margin:0}
+.foot-links a{font-weight:700;display:inline-flex;align-items:center;min-height:48px}
+.copy{color:var(--soft);font-size:18px}
+
+/* 定義表（特商法・プライバシー・申込内容） */
+.rows{width:100%;border-collapse:separate;border-spacing:0;background:var(--paper);border:2px solid var(--rule);border-radius:12px;overflow:hidden;margin:6px 0 18px}
+.rows th,.rows td{padding:12px 14px;text-align:left;vertical-align:top;line-height:1.7;border-top:2px solid var(--rule)}
+.rows tr:first-child th,.rows tr:first-child td{border-top:0}
+.rows th{background:var(--cream-soft);font-weight:800;color:var(--green);white-space:nowrap}
+@media (max-width:560px){
+  .rows,.rows tbody,.rows tr,.rows th,.rows td{display:block;width:auto}
+  .rows th{border-top:2px solid var(--rule);white-space:normal;padding-bottom:2px}
+  .rows td{border-top:0;padding-top:2px}
+  .rows tr:first-child th{border-top:0}
+}
+
+/* 価格：初回と2回目以降を同じ大きさで並べる（特商法・景表法） */
+.price{container-type:inline-size;background:var(--paper);border:3px solid var(--green);border-radius:14px;padding:6px 14px;margin:14px 0 20px}
+/* ラベル列の幅を2行でそろえ、ラベル＋金額のまとまりをカードの中央に置く */
+.price-row{display:grid;grid-template-columns:112px auto;justify-content:center;align-items:center;gap:6px 16px;padding:12px 8px}
+.price-row:first-child{background:var(--straw);border-radius:10px}
+@container (max-width:275px){.price-row{grid-template-columns:auto;justify-items:center}.price dd{align-items:center}}
+.price-row + .price-row{border-top:2px dashed var(--rule)}
+.price dt{display:flex;justify-content:center}
+.price dd{display:flex;flex-direction:column;align-items:flex-end;line-height:1.3}
+.tag{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;line-height:1.25;color:#FFFFFF}
+.tag-first{width:64px;height:64px;border-radius:50%;background:var(--red);font-size:20px}
+.tag-next{min-height:64px;padding:6px 8px;border-radius:10px;background:var(--green);font-size:18px}
+.yen{font-size:clamp(40px,11.5vw,56px);font-weight:800;letter-spacing:.01em;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums}
+.yen small{font-size:.5em;margin-left:2px}
+.yen-first{color:var(--red)}
+.tax{color:var(--soft);font-size:18px;font-weight:700;white-space:nowrap}
+
+/* ボタン */
+.cta{display:flex;justify-content:center;margin:26px 0 14px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;max-width:480px;min-height:72px;padding:14px 20px;
+  border-radius:999px;background:var(--wine);color:#FFFFFF;
+  font-size:21px;font-weight:800;line-height:1.4;letter-spacing:.04em;text-decoration:none;
+  box-shadow:0 5px 0 var(--wine-deep);text-align:center;
+}
+.btn:hover{background:var(--wine-deep);color:#FFFFFF}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--wine-deep)}
+@media (prefers-reduced-motion:reduce){.btn:active{transform:none}}
+.btn svg{flex:none;width:26px;height:26px}
+
+/* 申込ページの要点（開いてすぐボタンまで見えるように短く） */
+.summary{list-style:none;margin:10px 0 0;padding:0;border:2px solid var(--rule);border-radius:12px;background:var(--paper)}
+.summary li{display:grid;grid-template-columns:4.6em 1fr;gap:8px;margin:0;padding:8px 12px;border-top:1px solid var(--rule);line-height:1.6;font-size:18px}
+.summary li:first-child{border-top:0}
+.summary b{color:var(--green)}
+.age-short{color:var(--soft);font-size:18px;line-height:1.6;text-align:center;margin-top:8px}
+
+/* 初回価格のコード入力の案内 */
+.code-guide{background:var(--straw);border:3px solid var(--orange);border-radius:14px;padding:12px 14px;margin:14px 0 0}
+.code-title{font-weight:800;color:var(--green);font-size:19px;line-height:1.5;margin-bottom:4px}
+.code{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:6px}
+.code b{background:var(--paper);border:2px dashed var(--soft);border-radius:10px;padding:8px 20px;font-size:30px;font-weight:800;letter-spacing:.18em;font-variant-numeric:tabular-nums}
+.code button{min-height:52px;padding:0 20px;border:0;border-radius:999px;background:var(--green);color:#FFFFFF;font-size:19px;font-weight:800;font-family:inherit;cursor:pointer}
+.code button:hover{background:var(--green-deep)}
+.code-guide + .cta{margin-top:14px;margin-bottom:0}
+
+/* 注意書き・強調枠 */
+.age{border:3px solid var(--ink);border-radius:8px;padding:14px 16px;font-weight:800;margin:22px 0}
+.note{background:var(--cream-soft);border:2px solid var(--rule);border-radius:12px;padding:14px 16px;margin:16px 0}
+.fine{color:var(--soft);font-size:18px;line-height:1.7;margin-top:12px}
+.updated{color:var(--soft);font-size:18px;margin-top:26px}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">ワインらいふ便</a>
+    <a class="site-back" href="index.html">← ページにもどる</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>利用規約</h1>
+    <p class="lead">この規約は、UMEZOO株式会社（以下「当方」）が提供する定期便「ワインらいふ便」（以下「本サービス」）のご利用条件を定めるものです。お申し込みいただいた方（以下「お客様」）は、この規約に同意したものとみなします。</p>
+
+    <h2>第1条（お申し込みできる方）</h2>
+    <p>本サービスは20歳以上の方に限りお申し込みいただけます。お申し込みの際に生年月日を確認します。20歳未満の方への酒類の販売はいたしません。</p>
+
+    <h2>第2条（契約の成立）</h2>
+    <p>お客様が所定の画面でお申し込みを完了し、当方がこれを承諾した時点で、定期購入契約が成立します。次のいずれかに当てはまる場合、当方はお申し込みをお断りすることがあります。</p>
+    <ul>
+      <li>お申し込みの内容に誤りや虚偽がある場合</li>
+      <li>20歳未満の方である場合</li>
+      <li>過去に代金のお支払いが行われなかった場合</li>
+      <li>転売を目的とするなど、この規約に反するおそれがある場合</li>
+    </ul>
+
+    <h2>第3条（商品と価格）</h2>
+    <p>お届けする商品は、自然派ワイン 750ml × 2本（月に1,500ml）です。味わいはお選びいただけません。赤白の種類は、季節に合わせてソムリエが厳選します。毎月、A3二つ折りのご案内（カレンダー・今月のワイン・レシピ）を同梱します。初回のお届けには、適量メーター（計量カップ）をおつけします。</p>
+    <p>価格は、初回 4,990円（税込・送料別。オープン記念価格。お申し込み画面でコード「SHOKAI」をご入力いただいた場合に適用。予告なく終了することがあります）、2回目以降 月額 9,980円（税込・送料別）です。このほかに送料が全国一律 1,000円 かかります。</p>
+
+    <h2>第4条（お支払い）</h2>
+    <p>お支払い方法はクレジットカードです。初回はお申し込みのときに、2回目以降はお申し込み日を起点に毎月同じ日に、自動でお支払いいただきます。</p>
+
+    <h2>第5条（お届け）</h2>
+    <p>初回はご注文から5営業日以内に発送します。2回目以降は毎月1回お届けします。お届け先の変更は、メールでご連絡ください。</p>
+    <p>お客様のご不在などにより商品をお届けできず、配送業者の保管期間を過ぎて当方に返送された場合、再度のお届けにかかる費用はお客様のご負担となることがあります。</p>
+
+    <h2>第6条（解約）</h2>
+    <p>お客様はいつでも解約をお申し出いただけます。最低継続回数の縛りはありません。メール（ume@umezoo.co.jp）でご連絡ください。ご連絡をいただいた翌月のお届けをもって最終回となります。すでにお支払いいただいた分の返金はいたしかねます。</p>
+
+    <h2>第7条（返品・交換）</h2>
+    <p>商品の性質上、お客様のご都合による返品・交換・キャンセルはお受けできません。破損・品違いなど当方に原因がある場合は、商品到着後1週間以内にメールでご連絡ください。送料当方負担で交換いたします。</p>
+
+    <h2>第8条（禁止事項）</h2>
+    <ul>
+      <li>お届けした商品を転売すること</li>
+      <li>20歳未満の方に酒類を渡すこと、または20歳未満の方のために申し込むこと</li>
+      <li>法令に違反する行為、当方や第三者に不利益を与える行為</li>
+    </ul>
+
+    <h2>第9条（サービスの変更・中止）</h2>
+    <p>当方は、本サービスの内容を変更し、または提供を中止することがあります。中止する場合は、あらかじめお客様にお知らせします。</p>
+
+    <h2>第10条（免責）</h2>
+    <p>天災、輸送機関の事故、その他やむを得ない事情により商品のお届けが遅れた場合、当方は責任を負いかねます。この場合も、お届けできなかった分の代金はお返しします。</p>
+
+    <h2>第11条（個人情報）</h2>
+    <p>お客様の個人情報は、<a href="privacy.html">プライバシーポリシー</a>に従って取り扱います。</p>
+
+    <h2>第12条（規約の変更）</h2>
+    <p>当方は、必要に応じてこの規約を変更することがあります。変更した場合は、このページに掲載します。</p>
+
+    <h2>第13条（準拠法・管轄）</h2>
+    <p>この規約は日本法にもとづいて解釈されます。本サービスに関して争いが生じた場合は、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+
+    <p class="updated">制定日：2026年9月16日</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="index.html">ワインらいふ便について</a></li>
+      <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+      <li><a href="privacy.html">プライバシーポリシー</a></li>
+    </ul>
+    <p class="copy">UMEZOO株式会社</p>
+  </div>
+</footer>
+
+</body>
+</html>

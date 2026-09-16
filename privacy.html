@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー｜ワインらいふ便</title>
+<meta name="description" content="ワインらいふ便における個人情報の取り扱いについて。">
+<meta name="robots" content="noindex,nofollow">
+<style>
+/* ワインらいふ便 サブページ共通スタイル（申込・特商法・規約・プライバシー）
+   LP（ワインらいふ便_LP.html）と同じ配色・同じ可読性ルール（DESIGN.md）。
+   build_site.py が各ページの  をこのファイルの中身に置き換える。 */
+:root{
+  --green:#1B5E3B; --green-deep:#134630;
+  --cream:#FFF6DC; --cream-soft:#FFFBF0; --paper:#FFFFFF;
+  --ink:#1F1A17; --soft:#3D3632;
+  --red:#A8231C; --wine:#9B2C3B; --wine-deep:#7A1F2C;
+  --orange:#F39A2B;
+  --rule:#E8DFC9; --straw:#FFF0C2; --focus:#FFD43D;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:-apple-system,"Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  font-size:19px;line-height:1.85;letter-spacing:.02em;
+  overflow-wrap:anywhere;word-break:auto-phrase;
+}
+img{max-width:100%}
+a{color:var(--green);text-decoration-thickness:2px;text-underline-offset:4px}
+a:hover{color:var(--green-deep);text-decoration-thickness:3px}
+a:focus-visible,.btn:focus-visible{outline:4px solid var(--ink);outline-offset:2px;box-shadow:0 0 0 8px var(--focus)}
+p{margin:0;text-wrap:pretty}
+ul,ol{margin:0;padding:0 0 0 1.4em}
+li + li{margin-top:6px}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.4}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+.nowrap{white-space:nowrap}
+
+/* ヘッダー・フッター */
+.site{background:var(--paper);border-bottom:4px solid var(--green)}
+.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:6px 14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{font-size:22px;font-weight:800;color:var(--green);letter-spacing:.04em;text-decoration:none;display:inline-flex;align-items:center;min-height:48px}
+.site-back{font-size:18px;display:inline-flex;align-items:center;min-height:48px}
+main{padding:34px 0 8px}
+h1{font-size:clamp(25px,6.6vw,31px);color:var(--green);margin-bottom:8px;text-wrap:balance}
+.lead{margin:14px 0 26px}
+h2{font-size:clamp(21px,5.4vw,24px);color:var(--green);margin:34px 0 12px;padding-bottom:6px;border-bottom:3px solid var(--rule)}
+h3{font-size:20px;margin:20px 0 6px}
+section p + p,section ul + p,section p + ul{margin-top:10px}
+.foot{background:var(--cream);border-top:4px solid var(--green);margin-top:44px;padding:26px 0 34px}
+.foot-links{display:flex;flex-wrap:wrap;gap:6px 24px;padding:0;list-style:none;margin-bottom:14px}
+.foot-links li{margin:0}
+.foot-links a{font-weight:700;display:inline-flex;align-items:center;min-height:48px}
+.copy{color:var(--soft);font-size:18px}
+
+/* 定義表（特商法・プライバシー・申込内容） */
+.rows{width:100%;border-collapse:separate;border-spacing:0;background:var(--paper);border:2px solid var(--rule);border-radius:12px;overflow:hidden;margin:6px 0 18px}
+.rows th,.rows td{padding:12px 14px;text-align:left;vertical-align:top;line-height:1.7;border-top:2px solid var(--rule)}
+.rows tr:first-child th,.rows tr:first-child td{border-top:0}
+.rows th{background:var(--cream-soft);font-weight:800;color:var(--green);white-space:nowrap}
+@media (max-width:560px){
+  .rows,.rows tbody,.rows tr,.rows th,.rows td{display:block;width:auto}
+  .rows th{border-top:2px solid var(--rule);white-space:normal;padding-bottom:2px}
+  .rows td{border-top:0;padding-top:2px}
+  .rows tr:first-child th{border-top:0}
+}
+
+/* 価格：初回と2回目以降を同じ大きさで並べる（特商法・景表法） */
+.price{container-type:inline-size;background:var(--paper);border:3px solid var(--green);border-radius:14px;padding:6px 14px;margin:14px 0 20px}
+/* ラベル列の幅を2行でそろえ、ラベル＋金額のまとまりをカードの中央に置く */
+.price-row{display:grid;grid-template-columns:112px auto;justify-content:center;align-items:center;gap:6px 16px;padding:12px 8px}
+.price-row:first-child{background:var(--straw);border-radius:10px}
+@container (max-width:275px){.price-row{grid-template-columns:auto;justify-items:center}.price dd{align-items:center}}
+.price-row + .price-row{border-top:2px dashed var(--rule)}
+.price dt{display:flex;justify-content:center}
+.price dd{display:flex;flex-direction:column;align-items:flex-end;line-height:1.3}
+.tag{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;line-height:1.25;color:#FFFFFF}
+.tag-first{width:64px;height:64px;border-radius:50%;background:var(--red);font-size:20px}
+.tag-next{min-height:64px;padding:6px 8px;border-radius:10px;background:var(--green);font-size:18px}
+.yen{font-size:clamp(40px,11.5vw,56px);font-weight:800;letter-spacing:.01em;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums}
+.yen small{font-size:.5em;margin-left:2px}
+.yen-first{color:var(--red)}
+.tax{color:var(--soft);font-size:18px;font-weight:700;white-space:nowrap}
+
+/* ボタン */
+.cta{display:flex;justify-content:center;margin:26px 0 14px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;max-width:480px;min-height:72px;padding:14px 20px;
+  border-radius:999px;background:var(--wine);color:#FFFFFF;
+  font-size:21px;font-weight:800;line-height:1.4;letter-spacing:.04em;text-decoration:none;
+  box-shadow:0 5px 0 var(--wine-deep);text-align:center;
+}
+.btn:hover{background:var(--wine-deep);color:#FFFFFF}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--wine-deep)}
+@media (prefers-reduced-motion:reduce){.btn:active{transform:none}}
+.btn svg{flex:none;width:26px;height:26px}
+
+/* 申込ページの要点（開いてすぐボタンまで見えるように短く） */
+.summary{list-style:none;margin:10px 0 0;padding:0;border:2px solid var(--rule);border-radius:12px;background:var(--paper)}
+.summary li{display:grid;grid-template-columns:4.6em 1fr;gap:8px;margin:0;padding:8px 12px;border-top:1px solid var(--rule);line-height:1.6;font-size:18px}
+.summary li:first-child{border-top:0}
+.summary b{color:var(--green)}
+.age-short{color:var(--soft);font-size:18px;line-height:1.6;text-align:center;margin-top:8px}
+
+/* 初回価格のコード入力の案内 */
+.code-guide{background:var(--straw);border:3px solid var(--orange);border-radius:14px;padding:12px 14px;margin:14px 0 0}
+.code-title{font-weight:800;color:var(--green);font-size:19px;line-height:1.5;margin-bottom:4px}
+.code{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:6px}
+.code b{background:var(--paper);border:2px dashed var(--soft);border-radius:10px;padding:8px 20px;font-size:30px;font-weight:800;letter-spacing:.18em;font-variant-numeric:tabular-nums}
+.code button{min-height:52px;padding:0 20px;border:0;border-radius:999px;background:var(--green);color:#FFFFFF;font-size:19px;font-weight:800;font-family:inherit;cursor:pointer}
+.code button:hover{background:var(--green-deep)}
+.code-guide + .cta{margin-top:14px;margin-bottom:0}
+
+/* 注意書き・強調枠 */
+.age{border:3px solid var(--ink);border-radius:8px;padding:14px 16px;font-weight:800;margin:22px 0}
+.note{background:var(--cream-soft);border:2px solid var(--rule);border-radius:12px;padding:14px 16px;margin:16px 0}
+.fine{color:var(--soft);font-size:18px;line-height:1.7;margin-top:12px}
+.updated{color:var(--soft);font-size:18px;margin-top:26px}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">ワインらいふ便</a>
+    <a class="site-back" href="index.html">← ページにもどる</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>プライバシーポリシー</h1>
+    <p class="lead">UMEZOO株式会社（以下「当方」）は、ワインらいふ便のご利用にあたってお預かりするお客様の個人情報を、次のとおり取り扱います。</p>
+
+    <h2>1. お預かりする情報</h2>
+    <ul>
+      <li>お名前、ご住所、お電話番号、メールアドレス、生年月日</li>
+      <li>お申し込み・お届け・お支払いの履歴</li>
+      <li>お問い合わせの内容</li>
+    </ul>
+    <p>クレジットカードの番号は、決済会社の画面で直接ご入力いただくため、当方では保有しません。</p>
+
+    <h2>2. 利用する目的</h2>
+    <ul>
+      <li>商品のお届けと、お支払いの手続きのため</li>
+      <li>お申し込み内容の確認、お問い合わせへの回答のため</li>
+      <li>20歳以上であることの確認のため</li>
+      <li>ワインらいふ便に関するご案内をお送りするため</li>
+      <li>サービスの改善のため（個人を特定しない形にして集計します）</li>
+    </ul>
+
+    <h2>3. 第三者へのお渡し</h2>
+    <p>法令にもとづく場合や、お客様の同意をいただいた場合を除いて、お預かりした個人情報を第三者にお渡しすることはありません。</p>
+
+    <h2>4. 業務の委託</h2>
+    <p>商品のお届けと代金の決済のため、次の範囲で必要な情報をお預けします。お預けした先には、当方と同じ水準で個人情報を扱うよう求めます。</p>
+    <ul>
+      <li>配送業者：お名前、ご住所、お電話番号</li>
+      <li>決済代行会社（ストライプジャパン株式会社）：お名前、ご連絡先、お支払いに関する情報</li>
+    </ul>
+
+    <h2>5. 安全管理</h2>
+    <p>お預かりした個人情報が漏えい・滅失・毀損しないよう、アクセスできる人を限り、必要な安全対策を講じます。利用する目的に必要がなくなった情報は、すみやかに消去します。</p>
+
+    <h2>6. Cookie（クッキー）について</h2>
+    <p>当ページでは、お客様の閲覧状況を把握するためにCookieを使うことがあります。Cookieからお客様個人が特定されることはありません。ブラウザの設定でCookieを無効にすることもできますが、その場合、一部の機能がご利用いただけないことがあります。</p>
+
+    <h2>7. 開示・訂正・利用停止のご請求</h2>
+    <p>お預かりしている個人情報の開示、訂正、追加、削除、利用の停止をご希望の場合は、下記の窓口までご連絡ください。ご本人であることを確認したうえで、法令に従って対応します。</p>
+
+    <h2>8. お問い合わせ窓口</h2>
+    <table class="rows">
+      <tr><th>事業者</th><td>UMEZOO株式会社</td></tr>
+            <tr><th>所在地</th><td>東京都千代田区東神田1-13-14 Hide and Seek 102号室</td></tr>
+            <tr><th>メール</th><td>ume@umezoo.co.jp</td></tr>
+    </table>
+
+    <h2>9. 内容の変更</h2>
+    <p>法令の改正やサービスの変更にあわせて、このプライバシーポリシーの内容を変更することがあります。変更した場合は、このページに掲載します。</p>
+
+    <p class="updated">制定日：2026年9月16日</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="index.html">ワインらいふ便について</a></li>
+      <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+      <li><a href="terms.html">利用規約</a></li>
+    </ul>
+    <p class="copy">UMEZOO株式会社</p>
+  </div>
+</footer>
+
+</body>
+</html>
